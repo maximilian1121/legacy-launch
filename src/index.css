@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+    * {
+        font-family: "Minecraft", Ubuntu, sans-serif;
+    }
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("/src/minecraftfont.woff") format("woff");
+}
+
+:root {
+    --ratio: 1.77;
+}
+
+#root {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+#root::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: var(--bg-url);
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+
+    filter: blur(2px);
+    transform: scale(1.1);
+    animation: pan-pano 80s linear infinite;
+}
+
+@keyframes pan-pano {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: calc(-100vh * var(--ratio)) 0;
+    }
+}
+
+.titlebar-drag {
+    -webkit-app-region: drag;
+    app-region: drag;
+}
