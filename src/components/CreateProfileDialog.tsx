@@ -72,7 +72,7 @@ export default function CreateProfileDialog({
     )?.url;
 
     return (
-        <Dialog title="Create Profile" open={open} onClose={onClose}>
+        <Dialog title="Create Profile" open={open}>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <TextField
                     label="Profile Name"

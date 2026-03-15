@@ -26,16 +26,15 @@
  * ```
  */
 
-import "./main-react";
 import "./index.css";
-import { WindowOutlined } from "@mui/icons-material";
-import { stringify } from "postcss";
+import "./main-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let config: any | null = null;
 
 function updatePanorama(url: string) {
     const img = new Image();
-    img.src = `/src/images/panos/${url}.png`;
+    img.src = `panos/${url}.png`;
 
     img.onload = () => {
         const root = document.documentElement;
@@ -58,8 +57,8 @@ async function getConfig() {
 }
 getConfig();
 
-const hoverSound = new Audio("/src/ui_focus.wav");
-const clickSound = new Audio("/src/ui_click.wav");
+const hoverSound = new Audio("ui_focus.wav");
+const clickSound = new Audio("ui_click.wav");
 hoverSound.load();
 hoverSound.volume = 0.2;
 clickSound.load();

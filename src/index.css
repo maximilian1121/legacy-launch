@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Minecraft";
-    src: url("/src/minecraftfont.woff") format("woff");
+    src: url("minecraftfont.woff") format("woff");
 }
 
 :root {

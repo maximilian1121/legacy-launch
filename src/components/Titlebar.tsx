@@ -1,9 +1,4 @@
-import {
-    Close,
-    MinimizeOutlined,
-    MinimizeRounded,
-    SquareOutlined,
-} from "@mui/icons-material";
+import { Close, MinimizeOutlined, SquareOutlined } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 
 const Titlebar = () => {
@@ -27,6 +22,7 @@ const Titlebar = () => {
 
     const handleAction = (action: string) => {
         // Accessing the API exposed via contextBridge in preload.ts
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const api = (window as any).windowAPI;
 
         if (api && typeof api[action] === "function") {

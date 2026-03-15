@@ -3,18 +3,17 @@ import {
     BrowserWindow,
     dialog,
     ipcMain,
+    net,
     protocol,
     shell,
-    net,
-    sharedTexture,
 } from "electron";
-import { pathToFileURL } from "node:url";
-import path from "node:path";
 import started from "electron-squirrel-startup";
-import { app_dir, store } from "./store";
+import { Jimp } from "jimp";
 import fs from "node:fs";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { createProfile, deleteProfile, launchProfile } from "./backend/profile";
-import sharp from "sharp";
+import { app_dir, store } from "./store";
 
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string;
 declare const MAIN_WINDOW_VITE_NAME: string;
@@ -162,6 +161,15 @@ ipcMain.handle("show-confirmation", async (event, options) => {
     return await dialog.showMessageBox(win, options);
 });
 
+async function cropWithJimp(source: string, skins_dir: string, skin: string) {
+    const image = await Jimp.read(source);
+
+    image.crop({ x: 0, y: 0, w: 64, h: 32 });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await image.write(path.join(skins_dir, skin) as any);
+}
+
 ipcMain.handle("set-new-skin", async (event, data) => {
     const win = BrowserWindow.fromWebContents(event.sender);
 
@@ -183,9 +191,7 @@ ipcMain.handle("set-new-skin", async (event, data) => {
         );
     }
 
-    await sharp(source)
-        .extract({ left: 0, top: 0, width: 64, height: 32 })
-        .toFile(path.join(skins_dir, skin));
+    cropWithJimp(source, skins_dir, skin);
 
     event.sender.send("skin-updated", {
         profile,
@@ -194,8 +200,6 @@ ipcMain.handle("set-new-skin", async (event, data) => {
 });
 
 ipcMain.handle("reset-skin", async (event, data) => {
-    const win = BrowserWindow.fromWebContents(event.sender);
-
     const profile = data.profile;
     const skin = data.skin;
     const skins_dir = path.join(profiles_dir, profile, "Common/res/mob");

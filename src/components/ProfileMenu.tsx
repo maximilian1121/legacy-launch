@@ -40,11 +40,9 @@ export default function ProfileMenu({
     };
 
     useEffect(() => {
-        const cleanup = window.electronAPI.onSkinUpdated(
-            async (newSkindata) => {
-                setSkinVer((prev) => prev + 1);
-            },
-        );
+        const cleanup = window.electronAPI.onSkinUpdated(async () => {
+            setSkinVer((prev) => prev + 1);
+        });
         updateProfileName();
 
         return () => cleanup();

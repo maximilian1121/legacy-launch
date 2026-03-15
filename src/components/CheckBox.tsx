@@ -45,7 +45,7 @@ export default function Checkbox({
                         }
                         disabled:bg-gray-100 disabled:cursor-not-allowed
                         before:content-[''] before:absolute before:hidden checked:before:block
-                        before:left-[4px] before:top-[1px] before:w-[4px] before:h-[8px]
+                        before:left-1 before:top-px before:w-1 before:h-2
                         before:border-white before:border-b-2 before:border-r-2 before:rotate-45
                     `}
                     {...props}
