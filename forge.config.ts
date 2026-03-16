@@ -16,7 +16,7 @@ const config: ForgeConfig = {
     makers: [
         new MakerSquirrel(
             {
-                name: "Legacy Launch",
+                name: "LegacyLaunch",
                 authors: "Maximilian",
                 setupIcon: "./icon.ico",
             },
