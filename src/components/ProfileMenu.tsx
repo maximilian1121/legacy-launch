@@ -58,7 +58,9 @@ export default function ProfileMenu({
                 <span className="flex justify-between align-middle items-center">
                     <h1 className="text-2xl">Profile - {profileName}</h1>
                     <span className="flex justify-end">
-                        <Button onClick={onClose}>Close</Button>
+                        <Button className="back-sfx" onClick={onClose}>
+                            Close
+                        </Button>
                     </span>
                 </span>
                 <Divider />

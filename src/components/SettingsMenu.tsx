@@ -139,7 +139,11 @@ export default function SettingsMenu({ onClose, open }: SettingsMenuProps) {
                     <Button onClick={handleSave} disabled={!dirty}>
                         Apply
                     </Button>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button
+                        className="back-sfx"
+                        variant="secondary"
+                        onClick={handleClose}
+                    >
                         Close
                     </Button>
                 </span>

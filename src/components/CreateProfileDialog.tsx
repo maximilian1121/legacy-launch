@@ -3,7 +3,7 @@ import Dialog from "./Dialog";
 import TextField from "./TextField";
 import Select from "./Select";
 import Button from "./Button";
-import { GitHub } from "@mui/icons-material";
+import { IoMdCode } from "react-icons/io";
 
 type CreateProfileDialogProps = {
     open: boolean;
@@ -98,7 +98,7 @@ export default function CreateProfileDialog({
                             }}
                             className="text-sm text-blue-500 underline cursor-pointer w-fit"
                         >
-                            View source <GitHub />
+                            View source <IoMdCode />
                         </a>
                     )}
                 </div>
@@ -108,6 +108,7 @@ export default function CreateProfileDialog({
                         type="button"
                         variant="secondary"
                         onClick={handleCancel}
+                        className="back-sfx"
                     >
                         Cancel
                     </Button>

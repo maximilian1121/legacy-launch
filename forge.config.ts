@@ -9,14 +9,32 @@ import { FuseV1Options, FuseVersion } from "@electron/fuses";
 const config: ForgeConfig = {
     packagerConfig: {
         asar: true,
+        executableName: "legacy-launch",
+        icon: "./icon",
     },
     rebuildConfig: {},
     makers: [
-        new MakerSquirrel({
-            name: "Legacy Launch",
-            authors: "Maximilian",
-        }),
-        new MakerDeb({}),
+        new MakerSquirrel(
+            {
+                name: "Legacy Launch",
+                authors: "Maximilian",
+                setupIcon: "./icon.ico",
+            },
+            ["win32"],
+        ),
+        new MakerDeb(
+            {
+                options: {
+                    name: "legacy-launch",
+                    bin: "legacy-launch",
+                    section: "games",
+                    priority: "optional",
+                    productName: "Legacy Launch",
+                    icon: "./icon.png",
+                },
+            },
+            ["linux"],
+        ),
         new MakerZIP({}, ["darwin", "linux", "win32"]),
     ],
     plugins: [

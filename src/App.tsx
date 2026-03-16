@@ -1,17 +1,11 @@
-import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
-import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import { useEffect, useState } from "react";
-import Button from "./components/Button";
 import CreateProfileDialog from "./components/CreateProfileDialog";
 import IconButton from "./components/IconButton";
-import ProfileCard from "./components/ProfileCard";
-import { Profile } from "./types";
-import { AddRounded } from "@mui/icons-material";
 import Processing from "./components/Processing";
+import ProfileCard from "./components/ProfileCard";
 import SettingsMenu from "./components/SettingsMenu";
-import SkinViewer from "./components/SkinViewer";
-import Dialog from "./components/Dialog";
-import ProfileMenu from "./components/ProfileMenu";
+import { Profile } from "./types";
+import { IoMdAdd, IoMdSettings } from "react-icons/io";
 
 export default function App() {
     const [creatingProfile, setCreatingProfile] = useState(false);
@@ -80,9 +74,7 @@ export default function App() {
                     variant="secondary"
                     className=""
                 >
-                    <SettingsRoundedIcon
-                        sx={{ color: "white", fontSize: "2.5rem" }}
-                    />
+                    <IoMdSettings />
                 </IconButton>
 
                 {/* <Button className="px-12 h-full max-h-full text-2xl">
@@ -94,7 +86,7 @@ export default function App() {
                     variant="secondary"
                     className=""
                 >
-                    <AddRounded sx={{ color: "white", fontSize: "2.5rem" }} />
+                    <IoMdAdd />
                 </IconButton>
             </div>
         </div>

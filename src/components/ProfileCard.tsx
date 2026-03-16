@@ -1,6 +1,6 @@
+import { IoMdSettings } from "react-icons/io";
 import Button from "./Button";
 import IconButton from "./IconButton";
-import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import ProfileMenu from "./ProfileMenu";
 import { useState } from "react";
 
@@ -39,7 +39,7 @@ export default function ProfileCard({ name, source, id }: ProfileCardArgs) {
                         onClick={() => setMenuOpen(true)}
                         variant="secondary"
                     >
-                        <SettingsRoundedIcon />
+                        <IoMdSettings />
                     </IconButton>
                 </div>
             </div>

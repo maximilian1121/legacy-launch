@@ -59,6 +59,7 @@ getConfig();
 
 const hoverSound = new Audio("ui_focus.wav");
 const clickSound = new Audio("ui_click.wav");
+const backSound = new Audio("ui_back.wav");
 hoverSound.load();
 hoverSound.volume = 0.2;
 clickSound.load();
@@ -101,7 +102,12 @@ document.addEventListener("mousedown", (event: MouseEvent) => {
 
     if (btn && !btn.disabled) {
         clickSound.currentTime = 0;
-        if (config && config.sfx)
+        if (!config || !config.sfx) return;
+        if (btn.classList.contains("back-sfx"))
+            backSound.play().catch(() => {
+                return;
+            });
+        else
             clickSound.play().catch(() => {
                 return;
             });

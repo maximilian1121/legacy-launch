@@ -1,13 +1,26 @@
-import { Close, MinimizeOutlined, SquareOutlined } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import {
+    VscChromeClose,
+    VscChromeMaximize,
+    VscChromeMinimize,
+} from "react-icons/vsc";
 
 const Titlebar = () => {
     const [showTitlebar, setShowTitlebar] = useState(false);
 
     const controls = [
-        { label: <MinimizeOutlined />, action: "minimize" },
-        { label: <SquareOutlined />, action: "maximize" },
-        { label: <Close />, action: "close" },
+        {
+            label: <VscChromeMinimize />,
+            action: "minimize",
+        },
+        {
+            label: <VscChromeMaximize />,
+            action: "maximize",
+        },
+        {
+            label: <VscChromeClose />,
+            action: "close",
+        },
     ];
 
     const updateTitlebarVisibility = async () => {
@@ -49,7 +62,7 @@ const Titlebar = () => {
                         key={btn.action}
                         onClick={() => handleAction(btn.action)}
                         className={`
-                            flex h-full w-12 items-center justify-center text-white transition-colors 
+                            no-sfx flex h-full w-12 items-center justify-center text-white transition-colors 
                             ${
                                 btn.action === "close"
                                     ? "hover:bg-red-600 active:bg-red-700"
