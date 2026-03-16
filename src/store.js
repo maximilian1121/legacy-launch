@@ -39,7 +39,7 @@ const schema = {
             system_frame: { type: "boolean" },
             pano: { type: "string" },
         },
-        default: { sfx: true, system_frame: false, pano: "TU46" },
+        default: { sfx: true, system_frame: false, pano: "TU46_D" },
     },
 };
 
