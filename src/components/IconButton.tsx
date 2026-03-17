@@ -18,7 +18,7 @@ export default function IconButton({
     };
 
     const baseStyles =
-        "cursor-pointer rounded-full text-white aspect-square p-2 transition-colors";
+        "select-none cursor-pointer rounded-full text-white aspect-square p-2 transition-colors flex justify-center items-center";
     const combinedClasses =
         `${baseStyles} ${variantStyles[variant]} ${className}`.trim();
 

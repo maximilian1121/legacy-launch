@@ -18,7 +18,7 @@ export default function Button({
     };
 
     const baseStyles =
-        "cursor-pointer rounded-2xl text-white px-4 py-2 transition-colors";
+        "select-none cursor-pointer rounded-2xl text-white px-4 py-2 transition-colors";
 
     const combinedClasses =
         `${baseStyles} ${variantStyles[variant]} ${className}`.trim();

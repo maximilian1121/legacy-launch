@@ -90,8 +90,6 @@ export default function SettingsMenu({ onClose, open }: SettingsMenuProps) {
 
                 <h1 className="text-lg">Appearance</h1>
 
-                <Divider />
-
                 <Select
                     label="Background panorama"
                     options={[
@@ -134,6 +132,21 @@ export default function SettingsMenu({ onClose, open }: SettingsMenuProps) {
                     }}
                     title="Recommended when using a window manager like Hyprland or you hate my window frame ):"
                 />
+
+                <Divider />
+
+                <h1 className="text-lg">Credits</h1>
+
+                <ul>
+                    <li>Maximilian - Launcher original creator</li>
+                    <li>4J Studios - UI sounds and panoramas</li>
+                    <li>
+                        Mojang Studios - splashes.txt file for list of splashes
+                        and font "Mojangles"
+                    </li>
+                </ul>
+
+                <Divider />
 
                 <span className="w-full flex gap-2">
                     <Button onClick={handleSave} disabled={!dirty}>

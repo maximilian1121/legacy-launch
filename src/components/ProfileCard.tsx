@@ -39,7 +39,7 @@ export default function ProfileCard({ name, source, id }: ProfileCardArgs) {
                         onClick={() => setMenuOpen(true)}
                         variant="secondary"
                     >
-                        <IoMdSettings />
+                        <IoMdSettings className="text-2xl" />
                     </IconButton>
                 </div>
             </div>

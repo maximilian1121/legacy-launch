@@ -1,7 +1,7 @@
 {
     "name": "Legacy Launch",
     "productName": "legacy-launch",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Most appealing legacy console edition launcher ever!",
     "main": ".vite/build/main.js",
     "private": true,
@@ -46,6 +46,7 @@
         "electron-squirrel-startup": "^1.0.1",
         "electron-store": "^8.2.0",
         "jimp": "^1.6.0",
+        "minecraft-formatted-text-react": "^1.1.1",
         "postcss": "^8.5.8",
         "postcss-loader": "^8.2.1",
         "react": "^19.2.4",

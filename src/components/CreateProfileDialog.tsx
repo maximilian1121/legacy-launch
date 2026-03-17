@@ -36,8 +36,8 @@ export default function CreateProfileDialog({
     );
 
     useEffect(() => {
-        if (profileName.length > 0 && profileName.trim().length < 4) {
-            setProfileNameError("Name must be at least 4 characters");
+        if (profileName.length > 0 && profileName.trim().length < 1) {
+            setProfileNameError("Name must be at least 1 character");
         } else {
             setProfileNameError(null);
         }
@@ -46,8 +46,8 @@ export default function CreateProfileDialog({
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
-        if (profileName.trim().length < 4) {
-            setProfileNameError("Name must be at least 4 characters");
+        if (profileName.trim().length < 1) {
+            setProfileNameError("Name must be at least 1 character");
             return;
         }
 
