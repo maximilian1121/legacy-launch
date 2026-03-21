@@ -72,7 +72,7 @@ export default function App() {
                         alt="Logo"
                         draggable={false}
                     />
-                    <p
+                    <span
                         className="absolute right-[10%] bottom-2 translate-x-1/2 text-center select-none 
              origin-center animate-splash-pulse whitespace-nowrap text-shadow-[3px_3px_0_#00000080]"
                         style={{
@@ -81,7 +81,7 @@ export default function App() {
                         onClick={updateSplash}
                     >
                         <MinecraftText>{"§e" + splash}</MinecraftText>
-                    </p>
+                    </span>
                 </div>
             </div>
 

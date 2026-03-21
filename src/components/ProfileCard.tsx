@@ -45,6 +45,7 @@ export default function ProfileCard({ name, source, id }: ProfileCardArgs) {
             </div>
             <ProfileMenu
                 open={menuOpen}
+                // open={true}
                 profileId={id}
                 onClose={() => setMenuOpen(false)}
             />

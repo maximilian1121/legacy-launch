@@ -96,9 +96,10 @@ export default function CreateProfileDialog({
                                 e.preventDefault();
                                 window.electronAPI.openExternal(selectedUrl);
                             }}
-                            className="text-sm text-blue-500 underline cursor-pointer w-fit"
+                            className="text-sm text-blue-500 underline cursor-pointer w-fit flex items-center gap-1 leading-none"
                         >
-                            View source <IoMdCode />
+                            View source
+                            <IoMdCode className="text-lg" />
                         </a>
                     )}
                 </div>
